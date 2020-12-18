@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiaofan.dao.UserMapper">
+
+    <select id="getUserList" resultType="com.xiaofan.pojo.User">
+        select * from mybatis.user
+    </select>
+
+    <select id="getUserLike" resultType="com.xiaofan.pojo.User">
+        select * from mybatis.user where name like #{value}
+    </select>
+
+    <select id="getUserById" resultType="com.xiaofan.pojo.User" parameterType="int">
+        select * from mybatis.user where id = #{id}
+    </select>
+
+    <insert id="addUser" parameterType="com.xiaofan.pojo.User">
+        insert into mybatis.user (id, name, pwd) values(#{id}, #{name}, #{pwd})
+    </insert>
+    <!-- map只要和键值保持一致即可 -->
+    <insert id="addUser1" parameterType="map">
+        insert into mybatis.user (id, name, pwd) values(#{userId}, #{userName}, #{password})
+    </insert>
+    
+    <update id="updateUser" parameterType="com.xiaofan.pojo.User">
+        update mybatis.user set name = #{name}, pwd = #{pwd} where id = #{id};
+    </update>
+
+    <delete id="deleteUser">
+        delete from mybatis.user where id = #{id}
+    </delete>
+</mapper>
