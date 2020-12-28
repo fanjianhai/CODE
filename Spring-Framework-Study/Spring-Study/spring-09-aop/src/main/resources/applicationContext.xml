@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="com.xiaofan.service.UserServiceImpl" />
+    <bean id="log" class="com.xiaofan.log.Log" />
+    <bean id="alterLog" class="com.xiaofan.log.AfterLog"/>
+
+    <!--方式1： 使用原生的Spring API接口-->
+    <!--&lt;!&ndash;配置aop：需要导入aop的约束&ndash;&gt;
+    <aop:config>
+        &lt;!&ndash;切入点： expression： 表达式，execution(要执行的位置！* 修饰符 * 返回值 * 类名 * 方法名 * 参数)&ndash;&gt;
+        <aop:pointcut id="pointcut" expression="execution(* com.xiaofan.service.UserServiceImpl.*(..))"/>
+
+        &lt;!&ndash; 执行环绕增加！&ndash;&gt;
+        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>
+        <aop:advisor advice-ref="alterLog" pointcut-ref="pointcut"/>
+    </aop:config>-->
+
+    <bean id="diy" class="com.xiaofan.diy.DiyPointCut"/>
+
+    <!--方式2 自定义类实现-->
+    <!--<aop:config>
+        &lt;!&ndash;自定义切面，ref 要引用的类&ndash;&gt;
+        <aop:aspect ref="diy">
+            &lt;!&ndash;切入点&ndash;&gt;
+            <aop:pointcut id="point" expression="execution(* com.xiaofan.service.UserServiceImpl.*(..))"/>
+            &lt;!&ndash;通知&ndash;&gt;
+            <aop:before method="before" pointcut-ref="point"/>
+            <aop:after method="after" pointcut-ref="point"/>
+        </aop:aspect>
+    </aop:config>-->
+
+    <!--方式三-->
+    <bean id="annotationPointCut" class="com.xiaofan.diy.AnnotationPointCut"/>
+    <!--开启aop注解支持-->
+    <aop:aspectj-autoproxy />
+
+</beans>

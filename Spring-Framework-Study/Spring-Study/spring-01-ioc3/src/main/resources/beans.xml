@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 通过有参构造创建实例 -->
+<!--    <bean id="user" class="com.xiaofan.pojo.User">-->
+<!--        <constructor-arg index="0" value="小范学java"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="user" class="com.xiaofan.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="狂神说java"/>-->
+<!--    </bean>-->
+    <bean id="user" class="com.xiaofan.pojo.User">
+        <constructor-arg name="name" value="小范学spring"/>
+    </bean>
+    <!-- 别名 -->
+    <alias name="user" alias="xiaofan"/>
+</beans>
