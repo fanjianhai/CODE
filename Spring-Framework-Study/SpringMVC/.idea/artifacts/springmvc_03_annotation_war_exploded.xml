@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="springmvc-03-annotation:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/springmvc_03_annotation_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="springmvc-03-annotation/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="springmvc-03-annotation" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.9.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
