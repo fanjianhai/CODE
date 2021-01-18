@@ -1,0 +1,4 @@
+# 关闭 thymeleaf模板引擎
+spring:
+  thymeleaf:
+    cache: false

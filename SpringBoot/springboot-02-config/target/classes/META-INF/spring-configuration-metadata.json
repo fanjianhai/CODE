@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "dog",
+      "type": "com.xiaofan.pojo.Dog",
+      "sourceType": "com.xiaofan.pojo.Dog"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dog.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.xiaofan.pojo.Dog"
+    },
+    {
+      "name": "dog.name",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaofan.pojo.Dog"
+    }
+  ],
+  "hints": []
+}

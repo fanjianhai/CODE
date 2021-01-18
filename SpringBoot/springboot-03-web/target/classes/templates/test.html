@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--所有html元素都可以被thymeleaf替换接管： th:元素名-->
+<div th:text="${msg}"></div>
+<div th:utext="${msg}"></div>
+<br>
+
+<h3 th:each="user:${users}" th:text="${user}"></h3>
+</body>
+</html>

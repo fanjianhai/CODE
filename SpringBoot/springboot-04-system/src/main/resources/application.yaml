@@ -1,0 +1,13 @@
+# 关掉模板的缓存
+spring:
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+
+  # 我们的配置文件的真实位置
+  messages:
+    basename: i18n.login
+  mvc:
+    format:
+      date: yyyy-MM-dd
+
