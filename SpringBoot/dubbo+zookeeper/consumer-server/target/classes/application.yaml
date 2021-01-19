@@ -1,0 +1,9 @@
+server:
+  port: 8002
+dubbo:
+  application:
+    # 暴露自己的服务名字
+    name: consumer-provider
+  registry:
+    # 去哪里取
+    address: zookeeper://127.0.0.1:2181

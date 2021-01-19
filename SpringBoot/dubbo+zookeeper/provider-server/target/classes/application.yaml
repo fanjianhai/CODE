@@ -1,0 +1,11 @@
+server:
+  port: 8001
+
+dubbo:
+  application:
+    name: provider-server
+  registry:
+    address: zookeeper://127.0.0.1:2181
+
+  scan:
+    base-packages: com.xiaofan.service

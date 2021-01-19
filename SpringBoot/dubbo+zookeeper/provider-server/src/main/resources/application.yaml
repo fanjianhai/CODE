@@ -1,0 +1,14 @@
+server:
+  port: 8001
+
+dubbo:
+  application:
+    # 服务应用名字
+    name: provider-server
+  registry:
+    # 注册中心地址
+    address: zookeeper://127.0.0.1:2181
+
+  scan:
+    # 那些服务要被注册
+    base-packages: com.xiaofan.service
