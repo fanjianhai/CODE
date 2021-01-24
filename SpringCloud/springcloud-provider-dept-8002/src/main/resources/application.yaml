@@ -1,0 +1,30 @@
+server:
+  port: 8002
+mybatis:
+  type-aliases-package: com.xiaofan.springcloud.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  application:
+    name: springcloud-provider-dept
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://192.168.1.30:3306/db02?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+
+# eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
+  instance:
+    instance-id: springcloud-provider-dept8002
+
+# info配置
+info:
+  app.name: xiaofan-springcloud
+  company.name: http://www.github.com
