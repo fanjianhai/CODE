@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="js">JavaScript</p>
+    <div id="list">
+        <p id="se">JavaSE</p>
+        <p id="ee">JavaEE</p>
+        <p id="me">JavaME</p>
+    </div>
+
+    <script>
+        let js = document.getElementById('js');
+        let list = document.getElementById('list');
+        // 追加节点
+        // list.appendChild(js)
+        let newP = document.createElement('p');
+        newP.id='newP';
+        newP.innerText = 'Hello xiaofan!';
+        list.appendChild(newP)
+        // 设置背景色
+        let body = document.getElementsByTagName("body")[0];
+        body.style.backgroundColor = "#ff00f0"
+        // 把一个新节点插入到一个结点的前面
+        let ee = document.getElementById("ee");
+        list.insertBefore(js, ee);
+
+    </script>
+</body>
+</html>

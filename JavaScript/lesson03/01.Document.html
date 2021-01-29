@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="father">
+    <h1>标题1</h1>
+    <p id="p1">p1</p>
+    <p class="p2">p2</p>
+</div>
+
+
+<script>
+    let h1 = document.getElementsByTagName("h1");
+    let p1 = document.getElementById("p1");
+    let p2 = document.getElementsByClassName("p2");
+    let father = document.getElementById("father");
+    let children = father.children  // 获取父节点下的所有子节点
+    father.lastChild
+    father.firstChild
+</script>
+</body>
+</html>

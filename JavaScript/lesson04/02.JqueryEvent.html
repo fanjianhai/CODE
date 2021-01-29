@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <style>
+        #divMove{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<!--要求：获取鼠标当前的一个坐标-->
+mouse: <span id="mouseMove"></span>
+<div id="divMove">
+    在这里移动看看
+</div>
+
+<script>
+    $("#divMove").mousemove(function (e) {
+        $("#mouseMove").text(`x: ${e.pageX}, y: ${e.pageY}`)
+    })
+</script>
+</body>
+</html>

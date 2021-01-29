@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // 定义方式1
+        function f1(x) {
+            console.log(typeof x)
+            if (x >= 0) {
+                return x
+            } else {
+                return -x
+            }
+        }
+
+        // 定义方式2
+        // typeof 检测变量的类型
+        let f2 = function (x) {
+            // 手动抛出异常
+            if (typeof x !== "number") {
+                throw "Not a num!"
+            }
+            if (x >= 0) {
+                return x
+            } else {
+                return -x
+            }
+        };
+
+        // arguments
+        function f3(x) {
+            console.log(x)
+            console.log(typeof x)
+            console.log("=====")
+            console.log(arguments)
+
+        }
+
+        // ...rest 标识
+        function f4(x, ...rest1) {
+            console.log(x)
+            console.log(typeof x)
+            console.log("=====")
+            console.log(rest1)
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

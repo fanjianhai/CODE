@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        "use strict"
+        let arr = [1,2,3,4,5,6]
+
+        arr.name = "tom"    // 这种语句 for of是不会遍历的
+        arr.push(100)
+
+        for (const index in arr) {
+            console.log(arr[index])
+        }
+        console.log("=========")
+        for (const number of arr) {
+            console.log(number)
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

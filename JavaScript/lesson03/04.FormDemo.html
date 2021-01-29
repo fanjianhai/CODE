@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        <p>
+            <span>用户名：</span><input type="text" id="username"/>
+        </p>
+        <p>
+            <span>性别：</span>
+            <input type="radio" name="sex" value="1" id="boy" required /> 男
+            <input type="radio" name="sex" value="2" id="girl" /> 女
+        </p>
+    </form>
+
+    <script>
+        let input_text = document.getElementById("username");
+        let boy = document.getElementById("boy");
+        let girl = document.getElementById("girl");
+        console.log(boy.checked);
+        boy.checked = true
+    </script>
+</body>
+</html>

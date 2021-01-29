@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--md5工具类-->
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+</head>
+<body>
+<form method="post" onsubmit="return check();">
+    <p>
+        <span>用户名：</span><input type="text" id="username" name="username"/>
+    </p>
+    <p>
+        <span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" id="input-password"/>
+    </p>
+    <input type="hidden" id="md5-password" name="password"/>
+    <input type="submit">
+</form>
+
+<script>
+    function check() {
+        let name = document.getElementById("username");
+        let inputPwd = document.getElementById("input-password");
+        let md5Pwd = document.getElementById("md5-password");
+        // password.value = md5(password.value)
+        md5Pwd.value = md5(inputPwd.value);
+        console.log(name.value)
+        console.log(inputPwd.value)
+        console.log(md5Pwd.value)
+        return false
+    }
+</script>
+</body>
+</html>

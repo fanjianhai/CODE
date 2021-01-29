@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        'use strict'
+        let student = {
+            name: "qinjiang",
+            age: 3,
+            run: function () {
+                console.log(this.name + " run...")
+            }
+        };
+
+        let xf = {
+            name: "xiaofan"
+        }
+
+        // xf 的原型对象是 student
+        xf.__proto__ = student
+
+        // 给ss新增加一个方法
+        function ss(name) {
+            this.name = name;
+        }
+
+        ss.prototype.hello = function () {
+            alert("hello")
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
