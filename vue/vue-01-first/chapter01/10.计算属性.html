@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入vue-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <!--导入axios-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.1.0/axios.min.js"></script>
+</head>
+
+<body>
+<!--view层 模板-->
+<div id="vue">
+    <p>currentTime1 {{currentTime1()}}</p>
+    <p>currentTime2 {{currentTime2}}</p>
+</div>
+
+<script type="text/javascript">
+    'use strict'
+
+    let vue = new Vue({
+        el: '#vue',
+        data: {
+            message: "xiaofan"
+        },
+        methods: {
+            currentTime1: function () {
+                return Date.now();
+            }
+        },
+        computed: { //计算属性methods computed的方法名不要重名字，对于不经常变化的内容可以通过这种方式进行缓存，更优
+            currentTime2: function () {
+                console.log(this.message);
+                return Date.now();
+            }
+        }
+    })
+</script>
+</body>
+</html>

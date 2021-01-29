@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入vue-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <!--导入axios-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.1.0/axios.min.js"></script>
+</head>
+<body>
+
+<!--view层 模板-->
+<div id="vue">
+    <todo>
+        <todo-title slot="todo-title" v-bind:title="title"></todo-title>
+        <todo-items slot="todo-items" v-for="(item, index) in todoitems" :item="item" :index="index" @remove1="removeItem(index)"></todo-items>
+    </todo>
+</div>
+
+<script type="text/javascript">
+    'use strict'
+
+    Vue.component("todo-title", {
+        props: ["title"],
+        template: '<div>{{title}}</div>'
+    });
+    Vue.component("todo-items", {
+        props: ["item","index"],
+        template: '<li>{{item}}<button @click="remove">删除</button></li>',
+        // 只能绑定当前组件的方法
+        methods: {
+            remove: function (index) {
+                // 自定义事件分发 $emit(自定义事件名， 下标)
+                this.$emit('remove1', index)
+            }
+        }
+    });
+    // slot插槽
+    Vue.component("todo", {
+        template: '<div>\
+                    <slot name="todo-title"></slot>\
+                    <ul>\
+                    <slot name="todo-items"></slot>\
+                    </ul>\
+            </div>'
+    });
+
+    let vue = new Vue({
+        el: '#vue',
+        data: {
+            title: "秦老师",
+            todoitems: ["狂神说Java", "狂神说Linux", "狂神说Vue", "狂神说Linux", "狂神说Vue"]
+        },
+        methods: {
+            removeItem: function (index) {
+                this.todoitems.splice(index, 1)
+            }
+        }
+    })
+</script>
+</body>
+</html>

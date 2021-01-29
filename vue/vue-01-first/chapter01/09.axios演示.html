@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入vue-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <!--导入axios-->
+    <script src="https://unpkg.com/axios@0.20.0/dist/axios.min.js"></script>
+</head>
+<body>
+<!--view层 模板-->
+<div id="vue">
+    <div>{{info.name}}</div>
+    <div>{{info.url}}</div>
+    <div>{{info.address.street}}</div>
+</div>
+
+<script type="text/javascript">
+    'use strict'
+
+    let vue = new Vue({
+        el: '#vue',
+        // data: {info: {name: "sss"}},
+        data() {
+            return {
+                //请求的返回参数合适，必须和json字符串一样，但可以省略不需要的
+                info: {
+                    name: null,
+                    url: null,
+                    address: {
+                        street: null
+                    }
+                }
+            }
+        },
+        mounted() { // 钩子函数 链式编程
+            axios.get('../data.json').then(response=>(this.info=response.data))
+            // axios.get("../data.json").then(response=>(console.log(response.data)))
+        }
+    })
+</script>
+</body>
+</html>

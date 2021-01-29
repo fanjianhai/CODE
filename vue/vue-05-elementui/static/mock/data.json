@@ -1,0 +1,25 @@
+{
+  "name":"小范学java",
+  "url": "http://baidu.com",
+  "page": "1",
+  "isNonProfit":"true",
+  "address": {
+    "street": "光荣街",
+    "city":"山西晋中",
+    "country": "中国"
+  },
+  "links": [
+    {
+      "name": "B站",
+      "url": "https://www.bilibili.com/"
+    },
+    {
+      "name": "4399",
+      "url": "https://www.4399.com/"
+    },
+    {
+      "name": "百度",
+      "url": "https://www.baidu.com/"
+    }
+  ]
+}

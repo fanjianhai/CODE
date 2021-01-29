@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入vue-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <!--导入axios-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.1.0/axios.min.js"></script>
+</head>
+
+<body>
+<!--view层 模板-->
+<div id="vue">
+    <todo>
+        <todo-title slot="todo-title" v-bind:title1="title"></todo-title>
+        <todo-items slot="todo-items" v-for="item in todoitems" v-bind:item1="item"></todo-items>
+    </todo>
+</div>
+
+<script type="text/javascript">
+    'use strict'
+
+    Vue.component("todo-title", {
+        props: ["title1"],
+        template: '<div>{{title1}}</div>'
+    });
+
+    Vue.component("todo-items", {
+        props: ["item1"],
+        template: '<li>{{item1}}</li>'
+    });
+
+    // slot插槽
+    Vue.component("todo", {
+        template: '<div>\
+                    <slot name="todo-title"></slot>\
+                    <ul>\
+                    <slot name="todo-items"></slot>\
+                    </ul>\
+            </div>'
+    });
+
+    // 模型
+    let vue = new Vue({
+        el: '#vue',
+        data: {
+            title: "范老师",
+            todoitems: ["小范学Java", "小范学Linux", "小范学Vue", "小范学Linux", "小范学Vue"]
+        }
+    })
+</script>
+</body>
+</html>

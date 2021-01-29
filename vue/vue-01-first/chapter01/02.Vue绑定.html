@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入vue-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+</head>
+
+<body>
+
+<!--view层 模板-->
+<div id="app">
+    <span v-bind:title="message">鼠标悬浮几秒钟查看此处动态绑定的提示信息！</span>
+</div>
+
+<script>
+    'use strict'
+    /*Model 数据*/
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            message: 'hello vue!'
+        }
+    })
+</script>
+</body>
+</html>

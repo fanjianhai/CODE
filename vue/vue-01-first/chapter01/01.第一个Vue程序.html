@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--1.导入vue-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+
+</head>
+<body>
+
+<!--view层 模板-->
+<div id="app">
+    {{message}}
+</div>
+
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        // model 数据
+        data: {
+            message: "hello,vue!"
+        }
+    });
+</script>
+
+</body>
+</html>

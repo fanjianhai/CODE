@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入vue-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+</head>
+
+<body>
+<!--view层 模板-->
+<div id="app">
+    <p style='color:blue' v-for="(item, index) in items">{{index}}. {{item.message}}</p>
+</div>
+
+<script>
+    'use strict'
+    /*Model 数据*/
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            message: 'hello vue!',
+            type: 'A',
+            items: [{message: '小范'},{message: '小梁'},{message: '小红'}]
+        }
+    })
+</script>
+</body>
+</html>
