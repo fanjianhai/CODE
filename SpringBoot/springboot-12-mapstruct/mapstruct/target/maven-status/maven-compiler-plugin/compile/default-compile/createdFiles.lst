@@ -1,0 +1,5 @@
+com\xiaofan\UserRoleMapperImpl.class
+com\xiaofan\domain\User.class
+com\xiaofan\UserRoleDto.class
+com\xiaofan\domain\Role.class
+com\xiaofan\UserRoleMapper.class
